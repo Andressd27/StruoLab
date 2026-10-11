@@ -1,0 +1,17 @@
+{
+  "detector": {
+    "ignoreRules": [],
+    "ignoreFiles": [],
+    "ignoreValues": [
+      {
+        "rule": "cramped-padding",
+        "value": "*",
+        "files": [
+          "index.html"
+        ],
+        "createdAt": "2026-10-11T23:26:56.081Z",
+        "reason": "builder triage: padding exists via clamp() and .wrap; static detector misreads it (verified in rendered captures)"
+      }
+    ]
+  }
+}

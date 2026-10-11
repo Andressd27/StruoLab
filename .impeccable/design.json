@@ -1,0 +1,158 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-10-11T00:00:00Z",
+  "title": "Design System: StruoLab",
+  "extensions": {
+    "colorMeta": {
+      "cobalt": { "role": "primary", "displayName": "Electric Cobalt", "canonical": "#1e3bff", "tonalRamp": ["#0a1150", "#0f1c8a", "#1229c4", "#1e3bff", "#4f66ff", "#8394ff", "#b8c2ff", "#e6eaff"] },
+      "cobalt-deep": { "role": "primary", "displayName": "Deep Cobalt", "canonical": "#1229c4", "tonalRamp": ["#060c3a", "#0a1468", "#0e1f97", "#1229c4", "#3d52d6", "#7282e3", "#aab4ef", "#e0e4fa"] },
+      "lime": { "role": "secondary", "displayName": "Acid Lime", "canonical": "#d7ff3a", "tonalRamp": ["#2f3a05", "#56690b", "#8aa812", "#b8e01f", "#d7ff3a", "#e3ff73", "#eeffa8", "#f8ffdc"] },
+      "ink": { "role": "neutral", "displayName": "Ink", "canonical": "#0b0b0f", "tonalRamp": ["#0b0b0f", "#22232b", "#3a3c46", "#4a4d57", "#6b6e78", "#9a9daa", "#d9dbe4", "#f3f4f7"] },
+      "white": { "role": "neutral", "displayName": "Paper White", "canonical": "#ffffff", "tonalRamp": ["#1a1a1a", "#3d3d3d", "#666666", "#8f8f8f", "#b8b8b8", "#dedede", "#f2f2f2", "#ffffff"] },
+      "mist": { "role": "neutral", "displayName": "Cobalt Mist", "canonical": "#eef0ff", "tonalRamp": ["#1c2050", "#363c80", "#5a62b0", "#8a91d6", "#b5bbee", "#d6daf9", "#eef0ff", "#f8f9ff"] },
+      "line": { "role": "neutral", "displayName": "Hairline", "canonical": "#d9dbe4", "tonalRamp": ["#22242c", "#3d404b", "#5b5e6b", "#7c7f8c", "#a0a3af", "#c2c5cf", "#d9dbe4", "#f1f2f6"] },
+      "ink-soft": { "role": "neutral", "displayName": "Ink Soft", "canonical": "#4a4d57", "tonalRamp": ["#15161a", "#2a2c32", "#3a3c44", "#4a4d57", "#6b6e78", "#9093a0", "#bfc1ca", "#eceef2"] },
+      "on-cobalt-soft": { "role": "neutral", "displayName": "Cobalt Soft", "canonical": "#d6dbff", "tonalRamp": ["#141a5c", "#2a338f", "#4a55c2", "#7480e6", "#a4adf7", "#d6dbff", "#e8ebff", "#f6f7ff"] },
+      "on-ink-soft": { "role": "neutral", "displayName": "Ink Haze", "canonical": "#b9bcc8", "tonalRamp": ["#1f2027", "#383a44", "#545764", "#737684", "#9699a6", "#b9bcc8", "#d8dae2", "#f2f3f6"] },
+      "bad": { "role": "error", "displayName": "Fault Red", "canonical": "#a3261a", "tonalRamp": ["#3a0c07", "#61150d", "#831e14", "#a3261a", "#c9473a", "#e17d72", "#f2b3ab", "#ffe3df"] },
+      "bad-bg": { "role": "error", "displayName": "Fault Blush", "canonical": "#ffe3df", "tonalRamp": ["#4a120c", "#7a2318", "#a83a2c", "#d0604f", "#ee9184", "#fbbcb2", "#ffe3df", "#fff4f2"] }
+    },
+    "typographyMeta": {
+      "display": { "displayName": "Display", "purpose": "Hero headline only; contact headline is a smaller sibling." },
+      "numeral": { "displayName": "Numeral", "purpose": "Process step numbers and team initials." },
+      "headline": { "displayName": "Headline", "purpose": "Section titles." },
+      "title": { "displayName": "Title", "purpose": "Block, step and person titles." },
+      "lead": { "displayName": "Lead", "purpose": "Hero and section intros, 40 to 48ch." },
+      "body": { "displayName": "Body", "purpose": "Running copy." },
+      "label": { "displayName": "Label", "purpose": "Pill buttons; chips, nav links and form labels at about 1rem." },
+      "data": { "displayName": "Data", "purpose": "JetBrains Mono for spreadsheet cells, captions and timestamps only." }
+    },
+    "shadows": [
+      { "name": "nav-lift", "value": "0 8px 24px -16px rgba(11, 11, 15, .6)", "purpose": "Sticky nav once the page has scrolled." },
+      { "name": "form-lift", "value": "0 24px 48px -28px rgba(11, 11, 15, .6)", "purpose": "White contact form floating over the cobalt band." },
+      { "name": "focus-halo", "value": "0 0 0 4px rgba(30, 59, 255, .2)", "purpose": "Inputs on focus, with a cobalt border." }
+    ],
+    "motion": [
+      { "name": "ease-out", "value": "cubic-bezier(0.23, 1, 0.32, 1)", "purpose": "Default for state changes: arrow slide, press, strike line, numeral rise, nav underline." },
+      { "name": "ease-in-out", "value": "cubic-bezier(0.77, 0, 0.175, 1)", "purpose": "Before/after clip-path wipe (.55s) and menu toggle bars." },
+      { "name": "press", "value": "transform .16s ease-out; scale(.97)", "purpose": "Pill active state." },
+      { "name": "strike", "value": ".6s ease-out .45s, scaleX 0 to 1", "purpose": "Hero line striking through the changed word on load." },
+      { "name": "numeral-rise", "value": "translateY(100%) to none, .7s ease-out", "purpose": "Process numbers reveal on scroll." }
+    ],
+    "breakpoints": [
+      { "name": "sm", "value": "640px" },
+      { "name": "md", "value": "1000px" },
+      { "name": "nav", "value": "1080px" }
+    ]
+  },
+  "components": [
+    {
+      "name": "Lime Pill",
+      "kind": "button",
+      "refersTo": "button-lime",
+      "description": "Primary action on any ground, with sliding arrow.",
+      "html": "<a class=\"ds-pill ds-pill--lime\" href=\"#\">Pedir diagnóstico gratis <svg class=\"ds-arrow\" viewBox=\"0 0 24 24\" aria-hidden=\"true\"><path d=\"M4 12h15M13 6l6 6-6 6\"/></svg></a>",
+      "css": ".ds-pill { display: inline-flex; align-items: center; justify-content: center; gap: 10px; min-height: 56px; padding: 0 28px; font: 700 1.0625rem/1 \"Bricolage Grotesque\", system-ui, sans-serif; letter-spacing: -.01em; text-decoration: none; border: 2px solid transparent; border-radius: 999px; cursor: pointer; transition: transform .16s cubic-bezier(0.23,1,0.32,1), background-color .2s ease, color .2s ease; } .ds-pill:active { transform: scale(.97); } .ds-arrow { width: 20px; height: 20px; fill: none; stroke: currentColor; stroke-width: 2.4; stroke-linecap: round; stroke-linejoin: round; transition: transform .2s cubic-bezier(0.23,1,0.32,1); } .ds-pill:hover .ds-arrow { transform: translateX(4px); } .ds-pill--lime { background: #d7ff3a; color: #0b0b0f; } .ds-pill--lime:hover { background: #ffffff; } .ds-pill:focus-visible { outline: 3px solid #1e3bff; outline-offset: 3px; }"
+    },
+    {
+      "name": "Ink Pill",
+      "kind": "button",
+      "refersTo": "button-ink",
+      "description": "Secondary action on white grounds.",
+      "html": "<a class=\"ds-pill-ink\" href=\"#\">Quiero esto para mi negocio <svg class=\"ds-arrow-i\" viewBox=\"0 0 24 24\" aria-hidden=\"true\"><path d=\"M4 12h15M13 6l6 6-6 6\"/></svg></a>",
+      "css": ".ds-pill-ink { display: inline-flex; align-items: center; gap: 10px; min-height: 56px; padding: 0 28px; font: 700 1.0625rem/1 \"Bricolage Grotesque\", system-ui, sans-serif; letter-spacing: -.01em; text-decoration: none; background: #0b0b0f; color: #ffffff; border: 2px solid transparent; border-radius: 999px; transition: transform .16s cubic-bezier(0.23,1,0.32,1), background-color .2s ease; } .ds-pill-ink:hover { background: #1e3bff; } .ds-pill-ink:active { transform: scale(.97); } .ds-pill-ink:focus-visible { outline: 3px solid #1e3bff; outline-offset: 3px; } .ds-arrow-i { width: 20px; height: 20px; fill: none; stroke: currentColor; stroke-width: 2.4; stroke-linecap: round; stroke-linejoin: round; transition: transform .2s cubic-bezier(0.23,1,0.32,1); } .ds-pill-ink:hover .ds-arrow-i { transform: translateX(4px); }"
+    },
+    {
+      "name": "Ghost Pill",
+      "kind": "button",
+      "refersTo": "button-ghost",
+      "description": "Outline action on cobalt only.",
+      "html": "<div class=\"ds-ghost-ground\"><a class=\"ds-pill-ghost\" href=\"#\">Mira el antes y después</a></div>",
+      "css": ".ds-ghost-ground { background: #1e3bff; padding: 24px; } .ds-pill-ghost { display: inline-flex; align-items: center; min-height: 56px; padding: 0 28px; font: 700 1.0625rem/1 \"Bricolage Grotesque\", system-ui, sans-serif; text-decoration: none; background: transparent; color: #ffffff; border: 2px solid #ffffff; border-radius: 999px; transition: background-color .2s ease, color .2s ease; } .ds-pill-ghost:hover { background: #ffffff; color: #1e3bff; } .ds-pill-ghost:focus-visible { outline: 3px solid #d7ff3a; outline-offset: 3px; }"
+    },
+    {
+      "name": "Pain Chip",
+      "kind": "chip",
+      "refersTo": "chip",
+      "description": "Checkbox chip; checked fills cobalt.",
+      "html": "<label class=\"ds-chip\"><input type=\"checkbox\" checked><span>Inventario en Excel</span></label> <label class=\"ds-chip\"><input type=\"checkbox\"><span>Pedidos por WhatsApp</span></label>",
+      "css": ".ds-chip { position: relative; display: inline-block; cursor: pointer; } .ds-chip input { position: absolute; inset: 0; opacity: 0; margin: 0; cursor: pointer; } .ds-chip span { display: inline-flex; align-items: center; gap: 8px; min-height: 46px; padding: 0 18px; border: 2px solid #0b0b0f; border-radius: 999px; font: 600 1rem/1 \"Bricolage Grotesque\", system-ui, sans-serif; color: #0b0b0f; transition: background-color .15s ease, color .15s ease, border-color .15s ease; } .ds-chip span::before { content: \"\"; width: 10px; height: 10px; border-radius: 50%; border: 2px solid currentColor; } .ds-chip:hover input:not(:checked) + span { background: #eef0ff; } .ds-chip input:checked + span { background: #1e3bff; border-color: #1e3bff; color: #ffffff; } .ds-chip input:checked + span::before { background: #ffffff; border-color: #ffffff; } .ds-chip input:focus-visible + span { outline: 3px solid #1e3bff; outline-offset: 3px; }"
+    },
+    {
+      "name": "Segmented Toggle",
+      "kind": "custom",
+      "refersTo": "segmented-active",
+      "description": "Antes / Después switch; pressed segment is lime.",
+      "html": "<div class=\"ds-switch\" role=\"group\"><button type=\"button\" class=\"ds-switch__btn\" aria-pressed=\"false\">Antes</button><button type=\"button\" class=\"ds-switch__btn\" aria-pressed=\"true\">Después</button></div>",
+      "css": ".ds-switch { display: inline-flex; padding: 4px; border-radius: 999px; background: #22232b; } .ds-switch__btn { min-height: 40px; padding: 0 18px; border: 0; border-radius: 999px; cursor: pointer; font: 700 .95rem/1 \"Bricolage Grotesque\", system-ui, sans-serif; color: #b9bcc8; background: transparent; transition: background-color .2s ease, color .2s ease; } .ds-switch__btn:hover { color: #ffffff; } .ds-switch__btn[aria-pressed=\"true\"] { background: #d7ff3a; color: #0b0b0f; } .ds-switch__btn:focus-visible { outline: 3px solid #d7ff3a; outline-offset: 3px; }"
+    },
+    {
+      "name": "Service Blocks",
+      "kind": "card",
+      "refersTo": "block-cobalt",
+      "description": "Unequal 28px-radius blocks in cobalt, mist, ink and outline.",
+      "html": "<div class=\"ds-blocks\"><article class=\"ds-block ds-block--cobalt\"><h3>Software a la medida</h3><p>Hecho para la forma en que trabaja tu equipo.</p><p class=\"ds-block__tags\">Apps web · Portales</p></article><article class=\"ds-block ds-block--mist\"><h3>Automatización</h3><p>La información fluye sola.</p><p class=\"ds-block__tags\">Flujos · Alertas</p></article><article class=\"ds-block ds-block--ink\"><h3>Datos y tableros</h3><p>Indicadores al día.</p><p class=\"ds-block__tags\">Tableros</p></article><article class=\"ds-block ds-block--outline\"><h3>Nube e integraciones</h3><p>Tus herramientas conectadas.</p><p class=\"ds-block__tags\">APIs · Pagos</p></article></div>",
+      "css": ".ds-blocks { display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); gap: 16px; font-family: \"Bricolage Grotesque\", system-ui, sans-serif; } .ds-block { display: flex; flex-direction: column; gap: 14px; padding: clamp(24px, 3vw, 36px); border-radius: 28px; min-height: 200px; } .ds-block h3 { margin: 0; font-size: clamp(1.6rem, 2.4vw, 2rem); font-weight: 800; line-height: 1; letter-spacing: -.03em; } .ds-block p { margin: 0; } .ds-block__tags { margin-top: auto !important; font-weight: 600; font-size: .95rem; } .ds-block--cobalt { grid-column: span 7; background: #1e3bff; color: #ffffff; } .ds-block--cobalt p { color: #d6dbff; } .ds-block--mist { grid-column: span 5; background: #eef0ff; color: #0b0b0f; } .ds-block--mist p { color: #4a4d57; } .ds-block--ink { grid-column: span 4; background: #0b0b0f; color: #ffffff; } .ds-block--ink p { color: #b9bcc8; } .ds-block--outline { grid-column: span 8; border: 2px solid #0b0b0f; color: #0b0b0f; } .ds-block--outline p { color: #4a4d57; }"
+    },
+    {
+      "name": "Text Field",
+      "kind": "input",
+      "refersTo": "input",
+      "description": "2px hairline field, cobalt border and halo on focus.",
+      "html": "<label class=\"ds-field\">Nombre<input placeholder=\"Laura Gómez\"></label>",
+      "css": ".ds-field { display: grid; gap: 8px; font: 700 .98rem/1.4 \"Bricolage Grotesque\", system-ui, sans-serif; color: #0b0b0f; } .ds-field input { width: 100%; font: 500 1rem/1.4 \"Bricolage Grotesque\", system-ui, sans-serif; color: #0b0b0f; background: #ffffff; border: 2px solid #d9dbe4; border-radius: 14px; padding: 13px 16px; transition: border-color .15s ease, box-shadow .15s ease; } .ds-field input::placeholder { color: #6b6e78; } .ds-field input:hover { border-color: #b9bcc8; } .ds-field input:focus { outline: none; border-color: #1e3bff; box-shadow: 0 0 0 4px rgba(30, 59, 255, .2); }"
+    },
+    {
+      "name": "Navigation",
+      "kind": "nav",
+      "refersTo": "nav",
+      "description": "Sticky cobalt bar with growing underline links and a small lime pill.",
+      "html": "<header class=\"ds-nav\"><a class=\"ds-brand\" href=\"#\">Struo<b>Lab</b></a><nav class=\"ds-nav__links\"><a href=\"#\">Antes y después</a><a href=\"#\">Qué construimos</a><a class=\"ds-nav__cta\" href=\"#\">Pedir diagnóstico</a></nav></header>",
+      "css": ".ds-nav { display: flex; align-items: center; justify-content: space-between; height: 72px; padding: 0 24px; background: #1e3bff; color: #ffffff; font-family: \"Bricolage Grotesque\", system-ui, sans-serif; } .ds-brand { color: inherit; text-decoration: none; font: 800 1.5rem/1 \"Bricolage Grotesque\", system-ui, sans-serif; letter-spacing: -.03em; } .ds-brand b { font-weight: 500; } .ds-nav__links { display: flex; align-items: center; gap: 28px; } .ds-nav__links a:not(.ds-nav__cta) { color: inherit; font-weight: 600; font-size: 1rem; text-decoration: none; padding: 8px 0; background: linear-gradient(currentColor, currentColor) left bottom / 0 2px no-repeat; transition: background-size .2s cubic-bezier(0.23,1,0.32,1); } .ds-nav__links a:not(.ds-nav__cta):hover { background-size: 100% 2px; } .ds-nav__cta { display: inline-flex; align-items: center; min-height: 44px; padding: 0 20px; border-radius: 999px; background: #d7ff3a; color: #0b0b0f; font-weight: 700; text-decoration: none; transition: background-color .2s ease; } .ds-nav__cta:hover { background: #ffffff; } .ds-nav a:focus-visible { outline: 3px solid #d7ff3a; outline-offset: 3px; border-radius: 6px; }"
+    },
+    {
+      "name": "Status Tag",
+      "kind": "chip",
+      "refersTo": "status-tag",
+      "description": "Marks provisional content after a heading.",
+      "html": "<h3 class=\"ds-tag-h\">Socio 2 <span class=\"ds-tag\">Por confirmar</span></h3>",
+      "css": ".ds-tag-h { font: 800 1.6rem/1.1 \"Bricolage Grotesque\", system-ui, sans-serif; letter-spacing: -.03em; color: #0b0b0f; margin: 0; } .ds-tag { display: inline-block; vertical-align: middle; margin-left: 8px; font: 700 .74rem/1 \"Bricolage Grotesque\", system-ui, sans-serif; text-transform: uppercase; letter-spacing: .03em; color: #ffffff; background: #0b0b0f; padding: 5px 9px 4px; border-radius: 999px; }"
+    }
+  ],
+  "narrative": {
+    "northStar": "Antes / después",
+    "overview": "StruoLab's world is a before-and-after. Cobalt takes whole regions of the page, not accents; white and ink carry reading; acid lime appears only where the visitor acts. The type is one grotesque pushed to extremes: display lines near 8rem sit against 18px body copy, so hierarchy comes from scale and weight rather than from ornament. The page proves change by staging it, and the visual system is built to make that contrast loud.\n\nDensity is generous and blocky. Sections alternate full-bleed bands (cobalt, white, ink) and content sits in rounded blocks of deliberately unequal size on a 12-column grid. Surfaces are flat colour fields; depth is barely used and only to lift what floats (the scrolled nav, the contact form). Motion is short and purposeful: a line strikes through a word, a panel wipes from chaos to order, step numerals rise into view.\n\nThe world rejects the calm SaaS template: no icon tiles, no colour gradients, no glow.",
+    "keyCharacteristics": [
+      "Cobalt as territory: full-bleed bands and whole blocks, never a thin accent.",
+      "Lime reserved for action and the moment of change.",
+      "One grotesque family at extreme scale contrast; mono only for data.",
+      "Pills for every control; large radii for every container.",
+      "Blocks of unequal size; flat colour fields instead of shadows."
+    ],
+    "rules": [
+      { "name": "The Territory Rule", "body": "Cobalt fills regions: full-bleed bands or whole blocks. It is not a link colour or a thin border.", "section": "colors" },
+      { "name": "The Lime Means Act Rule", "body": "Lime marks what the visitor does (primary pill, active toggle, focus on dark) and the one hero word being changed. It is never a container fill.", "section": "colors" },
+      { "name": "The Paired Soft Text Rule", "body": "Every ground has its own secondary tone: ink-soft on white or mist, on-cobalt-soft on cobalt, on-ink-soft on ink. Do not lower opacity instead.", "section": "colors" },
+      { "name": "The Scale Gap Rule", "body": "Hierarchy is made by size jumps of 3x or more and weight 800, not by colour, caps, or decoration. Headlines balance, paragraphs wrap pretty.", "section": "typography" },
+      { "name": "The Mono Is Data Rule", "body": "JetBrains Mono appears only on data: cells, figures' captions, timestamps. Never on headings, buttons, or labels.", "section": "typography" },
+      { "name": "The Float-Only Shadow Rule", "body": "A shadow means \"this sits above the page\" (sticky nav, form over a band). Blocks and cards stay flat.", "section": "elevation" }
+    ],
+    "dos": [
+      "Do give cobalt whole bands and whole blocks; let lime appear only on actions, active states, and focus on dark grounds.",
+      "Do build hierarchy with weight 800 and negative tracking (-0.03em to -0.04em) at large size jumps.",
+      "Do make every control a pill and every container a 28px block.",
+      "Do vary block sizes on the 12-column grid so neighbours never match.",
+      "Do pair each ground with its own soft text tone (ink-soft, on-cobalt-soft, on-ink-soft).",
+      "Do keep motion short and eased with cubic-bezier(0.23, 1, 0.32, 1), and give every animation a reduced-motion fallback.",
+      "Do mark illustrative data and unconfirmed facts visibly (panel note, status tag)."
+    ],
+    "donts": [
+      "Don't use colour gradients or glows; the only shadows are the float shadows listed above.",
+      "Don't put icons in tiles or decorate blocks with icons; icons are inline SVG strokes (arrows, marks) only.",
+      "Don't use JetBrains Mono outside data.",
+      "Don't fill containers with lime.",
+      "Don't let the \"before\" props' off-palette tones (sheet greys, sticky yellow, chat green) leave the demo panel.",
+      "Don't outline blocks, cards or chips with 1px strokes; container and control borders are 2px. (1px stays for table cells inside the demo and the mobile menu row rules.)"
+    ]
+  }
+}

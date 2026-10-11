@@ -1,0 +1,344 @@
+<!doctype html>
+<html lang="es-CO">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>StruoLab — Sacamos tu negocio del Excel</title>
+  <meta name="description" content="StruoLab construye software a la medida, automatiza procesos y conecta las herramientas de pymes en Colombia. Hablas directo con quienes lo construyen.">
+  <meta name="theme-color" content="#1e3bff">
+  <link rel="icon" href="assets/logo.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wdth,wght@12..96,75..100,400..800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <script>document.documentElement.classList.add('js');</script>
+</head>
+<body>
+  <a class="skip" href="#contenido">Saltar al contenido</a>
+
+  <!-- ===== Navegación ===== -->
+  <header class="nav" id="nav">
+    <div class="wrap nav__inner">
+      <a href="#inicio" class="brand" aria-label="StruoLab, inicio">
+        <img src="assets/logo.svg" alt="" width="34" height="34">
+        <span>Struo<b>Lab</b></span>
+      </a>
+      <nav class="nav__links" id="navLinks" aria-label="Principal">
+        <a href="#demo">Antes y después</a>
+        <a href="#servicios">Qué construimos</a>
+        <a href="#proceso">Cómo trabajamos</a>
+        <a href="#nosotros">Por qué nosotros</a>
+        <a href="#contacto" class="pill pill--lime pill--sm">Pedir diagnóstico</a>
+      </nav>
+      <button class="nav__toggle" id="navToggle" aria-label="Abrir menú" aria-expanded="false" aria-controls="navLinks">
+        <span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <main id="contenido">
+    <!-- ===== Hero ===== -->
+    <section class="hero" id="inicio">
+      <div class="wrap">
+        <h1 class="hero__title">Sacamos tu negocio del <span class="strike">Excel</span>.</h1>
+        <div class="hero__row">
+          <p class="hero__lead">Software a la medida, automatización e integraciones para pymes en Colombia, hecho por las mismas personas con las que hablas.</p>
+          <div class="hero__actions">
+            <a class="pill pill--lime pill--lg" href="#contacto">
+              Pedir diagnóstico gratis
+              <svg class="arrow" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12h15M13 6l6 6-6 6"/></svg>
+            </a>
+            <a class="pill pill--ghost pill--lg" href="#demo">Mira el antes y después</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== Firma: antes / después ===== -->
+    <section class="demo" id="demo" aria-labelledby="demoTitle">
+      <div class="wrap demo__inner">
+        <div class="demo__side">
+          <h2 class="h2" id="demoTitle">Marca lo que te quita tiempo.</h2>
+          <p class="demo__intro">Te mostramos cómo se ve hoy y cómo se vería con un sistema hecho para tu negocio.</p>
+          <fieldset class="chips" id="pains">
+            <legend class="sr-only">¿Qué te quita más tiempo hoy?</legend>
+            <label class="chip"><input type="checkbox" name="dolor" value="inventario" data-label="Inventario en Excel" checked><span>Inventario en Excel</span></label>
+            <label class="chip"><input type="checkbox" name="dolor" value="pedidos" data-label="Pedidos por WhatsApp"><span>Pedidos por WhatsApp</span></label>
+            <label class="chip"><input type="checkbox" name="dolor" value="cobros" data-label="Facturación y cobros a mano"><span>Facturación y cobros a mano</span></label>
+            <label class="chip"><input type="checkbox" name="dolor" value="reportes" data-label="Reportes que nadie actualiza"><span>Reportes que nadie actualiza</span></label>
+            <label class="chip"><input type="checkbox" name="dolor" value="herramientas" data-label="Herramientas que no se hablan"><span>Herramientas que no se hablan</span></label>
+          </fieldset>
+          <a class="pill pill--ink" href="#contacto" id="demoCta">
+            Quiero esto para mi negocio
+            <svg class="arrow" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12h15M13 6l6 6-6 6"/></svg>
+          </a>
+        </div>
+
+        <div class="panel" id="panel">
+          <div class="panel__bar">
+            <p class="panel__name" id="panelName">Inventario en Excel</p>
+            <div class="switch" role="group" aria-label="Vista">
+              <button type="button" class="switch__btn" data-view="before" aria-pressed="true">Antes</button>
+              <button type="button" class="switch__btn" data-view="after" aria-pressed="false">Después</button>
+            </div>
+          </div>
+          <div class="panel__stage" aria-live="polite">
+            <div class="panel__layer panel__layer--before" id="layerBefore">
+              <table class="sheet">
+                <caption class="sr-only">Antes: inventario en una hoja de cálculo</caption>
+                <thead><tr><th>Producto</th><th>Stock</th><th>Actualizado</th></tr></thead>
+                <tbody>
+                  <tr><td>Tornillo 3/8</td><td class="bad">120??</td><td>hace 9 días</td></tr>
+                  <tr><td>Tornillo 3/8 (2)</td><td>95</td><td class="bad">¿?</td></tr>
+                  <tr><td>Cable #12</td><td class="bad">#¡REF!</td><td>—</td></tr>
+                  <tr><td>Cinta aislante</td><td>40</td><td>preguntarle a Jorge</td></tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="panel__layer panel__layer--after" id="layerAfter">
+              <div class="board">
+                <p class="board__kpi"><strong>95</strong> und. de Tornillo 3/8 <span>actualizado hoy, 8:42 a. m.</span></p>
+                <p class="board__alert">Cable #12 está por debajo del mínimo. Pedido sugerido: 200 m.</p>
+              </div>
+            </div>
+          </div>
+          <p class="panel__note">Ejemplo ilustrativo con datos inventados.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== Servicios ===== -->
+    <section class="services" id="servicios" aria-labelledby="servTitle">
+      <div class="wrap">
+        <h2 class="h2" id="servTitle">Lo que construimos</h2>
+        <div class="blocks">
+          <article class="block block--a">
+            <h3>Software a la medida</h3>
+            <p>Aplicaciones web y móviles hechas para la forma en que trabaja tu equipo, no al revés.</p>
+            <p class="block__tags">Apps web · Apps móviles · Portales de clientes</p>
+          </article>
+          <article class="block block--b">
+            <h3>Automatización de procesos</h3>
+            <p>Eliminamos tareas repetitivas para que la información fluya sola.</p>
+            <p class="block__tags">Flujos · Alertas · Formularios</p>
+          </article>
+          <article class="block block--c">
+            <h3>Datos y tableros</h3>
+            <p>Indicadores al día para decidir con información confiable.</p>
+            <p class="block__tags">Tableros · Reportes</p>
+          </article>
+          <article class="block block--d">
+            <h3>Nube e integraciones</h3>
+            <p>Conectamos tu ERP, CRM, facturación electrónica y pasarelas de pago para que dejen de vivir aislados.</p>
+            <p class="block__tags">APIs · Migración a la nube · Pagos</p>
+          </article>
+          <article class="block block--e">
+            <h3>Inteligencia artificial aplicada</h3>
+            <p>Asistentes y lectura automática de documentos donde de verdad ahorran trabajo.</p>
+            <p class="block__tags">Asistentes · Extracción</p>
+          </article>
+          <article class="block block--f">
+            <h3>Consultoría tecnológica</h3>
+            <p>Revisamos tus procesos y te entregamos una hoja de ruta clara antes de invertir un peso.</p>
+            <p class="block__tags">Diagnóstico · Hoja de ruta</p>
+          </article>
+        </div>
+        <p class="stack">Trabajamos con JavaScript, TypeScript, React, Node.js, Python, .NET, PostgreSQL, AWS, Azure y Docker.</p>
+      </div>
+    </section>
+
+    <!-- ===== Proceso ===== -->
+    <section class="process" id="proceso" aria-labelledby="procTitle">
+      <div class="wrap">
+        <h2 class="h2" id="procTitle">Así trabajamos</h2>
+        <p class="process__intro">Siempre sabes en qué etapa va tu proyecto, cuánto falta y qué viene después.</p>
+        <ol class="steps">
+          <li class="step">
+            <span class="step__no" aria-hidden="true"><span>01</span></span>
+            <div>
+              <h3>Descubrimiento y propuesta</h3>
+              <p>Entendemos tu operación y te proponemos la solución con prototipo, alcance, tiempos y precio cerrado por etapa.</p>
+            </div>
+          </li>
+          <li class="step">
+            <span class="step__no" aria-hidden="true"><span>02</span></span>
+            <div>
+              <h3>Desarrollo</h3>
+              <p>Construimos en ciclos de 2 semanas. Al final de cada uno ves algo funcionando.</p>
+            </div>
+          </li>
+          <li class="step">
+            <span class="step__no" aria-hidden="true"><span>03</span></span>
+            <div>
+              <h3>Pruebas con tu equipo</h3>
+              <p>Tu gente lo usa con casos reales antes de salir. Ajustamos hasta que funcione como lo necesitas.</p>
+            </div>
+          </li>
+          <li class="step">
+            <span class="step__no" aria-hidden="true"><span>04</span></span>
+            <div>
+              <h3>Lanzamiento y soporte</h3>
+              <p>Lo ponemos en marcha, capacitamos a tu equipo y seguimos pendientes después de entregar.</p>
+            </div>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- ===== Por qué nosotros ===== -->
+    <section class="why" id="nosotros" aria-labelledby="whyTitle">
+      <div class="wrap">
+        <h2 class="h2" id="whyTitle">No somos una agencia más</h2>
+        <p class="why__intro">Contratar software no debería ser una apuesta. Compáralo con las opciones que probablemente ya conoces.</p>
+
+        <div class="why__grid">
+          <div class="compare" role="table" aria-label="Comparación entre una agencia tradicional, un freelancer y StruoLab">
+            <div class="compare__row compare__row--head" role="row">
+              <span role="columnheader"><span class="sr-only">Criterio</span></span>
+              <span role="columnheader">Agencia</span>
+              <span role="columnheader">Freelancer</span>
+              <span role="columnheader" class="is-us">StruoLab</span>
+            </div>
+            <div class="compare__row" role="row">
+              <span role="rowheader">Hablas directo con quien construye tu solución</span>
+              <span role="cell" class="mark mark--no"><span class="sr-only">Rara vez</span></span>
+              <span role="cell" class="mark mark--yes"><span class="sr-only">Sí</span></span>
+              <span role="cell" class="mark mark--yes is-us"><span class="sr-only">Sí</span></span>
+            </div>
+            <div class="compare__row" role="row">
+              <span role="rowheader">Precio y alcance claros desde el primer día</span>
+              <span role="cell" class="mark mark--mid"><span class="sr-only">A veces</span></span>
+              <span role="cell" class="mark mark--mid"><span class="sr-only">A veces</span></span>
+              <span role="cell" class="mark mark--yes is-us"><span class="sr-only">Sí</span></span>
+            </div>
+            <div class="compare__row" role="row">
+              <span role="rowheader">Equipo completo: desarrollo, datos y diseño</span>
+              <span role="cell" class="mark mark--yes"><span class="sr-only">Sí</span></span>
+              <span role="cell" class="mark mark--no"><span class="sr-only">Rara vez</span></span>
+              <span role="cell" class="mark mark--yes is-us"><span class="sr-only">Sí</span></span>
+            </div>
+            <div class="compare__row" role="row">
+              <span role="rowheader">Avances funcionando cada 2 semanas</span>
+              <span role="cell" class="mark mark--mid"><span class="sr-only">A veces</span></span>
+              <span role="cell" class="mark mark--mid"><span class="sr-only">A veces</span></span>
+              <span role="cell" class="mark mark--yes is-us"><span class="sr-only">Sí</span></span>
+            </div>
+            <div class="compare__row" role="row">
+              <span role="rowheader">El código y los datos son 100% tuyos</span>
+              <span role="cell" class="mark mark--mid"><span class="sr-only">A veces</span></span>
+              <span role="cell" class="mark mark--mid"><span class="sr-only">A veces</span></span>
+              <span role="cell" class="mark mark--yes is-us"><span class="sr-only">Sí</span></span>
+            </div>
+            <div class="compare__row" role="row">
+              <span role="rowheader">Siguen contigo después del lanzamiento</span>
+              <span role="cell" class="mark mark--yes"><span class="sr-only">Sí</span></span>
+              <span role="cell" class="mark mark--no"><span class="sr-only">Rara vez</span></span>
+              <span role="cell" class="mark mark--yes is-us"><span class="sr-only">Sí</span></span>
+            </div>
+            <p class="compare__legend" aria-hidden="true">
+              <span class="mark mark--yes"></span>Sí
+              <span class="mark mark--mid"></span>A veces
+              <span class="mark mark--no"></span>Rara vez
+            </p>
+          </div>
+
+          <div class="promises">
+            <h3>Lo que te garantizamos <span class="tbd">Borrador</span></h3>
+            <dl>
+              <div><dt>Respuesta</dt><dd>Una persona del equipo te responde en menos de 24 horas hábiles.</dd></div>
+              <div><dt>Sin costos ocultos</dt><dd>Cotización cerrada por etapas. Si algo cambia, lo hablamos antes de cobrarlo.</dd></div>
+              <div><dt>Todo es tuyo</dt><dd>Te entregamos el código, la documentación y los accesos.</dd></div>
+              <div><dt>Soporte</dt><dd>3 meses incluidos después del lanzamiento para corregir cualquier falla.</dd></div>
+            </dl>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== Equipo ===== -->
+    <section class="team" aria-labelledby="teamTitle">
+      <div class="wrap">
+        <div class="team__head">
+          <h2 class="h2" id="teamTitle">Quién lo construye</h2>
+          <p>Tres especialistas que contestan el teléfono. <strong>Struo</strong> significa «yo construyo» en latín; <strong>Lab</strong> es el taller donde probamos cada pieza antes de entregarla.</p>
+        </div>
+        <div class="people">
+          <article class="person person--mist">
+            <p class="person__initials" aria-hidden="true">AD</p>
+            <h3>Andrés Durán</h3>
+            <p>Desarrollo y arquitectura</p>
+            <p class="person__tags">Web · APIs · Nube</p>
+          </article>
+          <article class="person person--white">
+            <p class="person__initials" aria-hidden="true">S2</p>
+            <h3>Socio 2 <span class="tbd">Por confirmar</span></h3>
+            <p>Datos y automatización</p>
+            <p class="person__tags">BI · Integraciones · IA</p>
+          </article>
+          <article class="person person--cobalt">
+            <p class="person__initials" aria-hidden="true">S3</p>
+            <h3>Socio 3 <span class="tbd">Por confirmar</span></h3>
+            <p>Producto y experiencia</p>
+            <p class="person__tags">UX/UI · Procesos · Clientes</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== Contacto ===== -->
+    <section class="contact" id="contacto" aria-labelledby="contactTitle">
+      <div class="wrap contact__inner">
+        <div class="contact__copy">
+          <h2 class="contact__title" id="contactTitle">¿Qué construimos juntos?</h2>
+          <p>Cuéntanos qué proceso te está frenando. Te respondemos con un diagnóstico inicial sin costo.</p>
+          <a class="pill pill--lime pill--lg js-whatsapp" href="#contactForm" hidden>
+            Escríbenos por WhatsApp
+            <svg class="arrow" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12h15M13 6l6 6-6 6"/></svg>
+          </a>
+          <dl class="contact__info">
+            <div><dt>Correo <span class="tbd">Provisional</span></dt><dd><a href="mailto:hola@struolab.com">hola@struolab.com</a></dd></div>
+            <div><dt>Base</dt><dd>Colombia, remoto y presencial</dd></div>
+          </dl>
+        </div>
+
+        <form class="form" id="contactForm" novalidate>
+          <div class="form__row">
+            <label>Nombre<input name="nombre" required autocomplete="name" placeholder="Laura Gómez"></label>
+            <label>Empresa<input name="empresa" autocomplete="organization" placeholder="Distribuidora La 14"></label>
+          </div>
+          <label>Correo o celular<input name="correo" required autocomplete="email" placeholder="laura@empresa.co"></label>
+          <label>¿Qué necesitas?
+            <select name="servicio">
+              <option>Software a la medida</option>
+              <option>Automatización de procesos</option>
+              <option>Datos y tableros</option>
+              <option>Nube e integraciones</option>
+              <option>Inteligencia artificial</option>
+              <option>No estoy seguro, quiero un diagnóstico</option>
+            </select>
+          </label>
+          <label>Cuéntanos el proceso<textarea name="mensaje" rows="4" required placeholder="Llevamos el inventario en Excel y los pedidos llegan por WhatsApp…"></textarea></label>
+          <button class="pill pill--lime pill--block" type="submit">
+            Enviar por correo
+            <svg class="arrow" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12h15M13 6l6 6-6 6"/></svg>
+          </button>
+          <p class="form__note">Se abrirá tu programa de correo con el mensaje listo para enviar.</p>
+          <p class="form__status" id="formStatus" role="status" aria-live="polite"></p>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="wrap footer__inner">
+      <a href="#inicio" class="brand brand--light">
+        <img src="assets/logo.svg" alt="" width="28" height="28">
+        <span>Struo<b>Lab</b></span>
+      </a>
+      <p>© <span id="year"></span> StruoLab · Software a la medida para pymes en Colombia</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
